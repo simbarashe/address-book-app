@@ -1,3 +1,31 @@
-<h1>
-  {{title}}
-</h1>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="panel panel-default" style="margin-left: 10px;margin-right: 10px;margin-top: 25px; padding: 5px 0;">
+<div class="panel-body">
+  <div class="col-sm-8">
+    <app-search (contactSelected)="selectedContactHandler($event)" (tagSelected)="selectedTagHandler($event)">
+    </app-search>
+  </div>
+  <div class="col-sm-2 col-sm-offset-2">
+    <button #notifier type="button" class="btn btn-default btn-secondary" [popover]="popTemplate" placement="bottom" (click)="updateStatus($event)"> !
+</button>
+
+    <template #popTemplate>
+      <span [innerHtml]="message"> </span>
+    </template>
+  </div>
+</div>
+</div>
+</div>
+</div>
+<div class="row">
+  <div class="col-sm-8">
+    <app-contact-list [contacts]="contacts" (contactChanged)="contactChangedHandler($event)" (tagsChanged)="tagsChangedHandler()"
+      (tagAdded)="tagsAddedHandler()"></app-contact-list>
+  </div>
+  <div class="col-sm-4">
+    <app-contact-communicationdetail [contact]="contact" *ngIf="noOfContacts > 0"></app-contact-communicationdetail>
+  </div>
+</div>
+</div>

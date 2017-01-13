@@ -1,0 +1,13 @@
+<div class="table-responsive">
+  <table class="table">
+    <tbody>
+      <tr *ngFor="let contact of contacts;">
+        <td>
+          <app-contact-detail [contact]="contact" (contactChanged)="contactChangedHandler($event)"
+          (tagsChanged)="tagsChangedHandler()"
+          (tagAdded)="tagsAddedHandler()"></app-contact-detail>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
