@@ -49,6 +49,7 @@ export class ContactDetailComponent implements OnInit {
     this.tagAdded.emit(this.newTag);
     this._notificationService.publishMessage(this.newTag);
     this.newTag = '';
+    this.getTags();
   }
 
   clearBackground() {
