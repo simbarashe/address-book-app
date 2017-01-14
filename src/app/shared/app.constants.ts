@@ -1,3 +1,3 @@
 export class Configuration {
-    public Server: string = 'http://localhost:44389/';
+    public Server: string = 'http://addressbookapi.azurewebsites.net/';
 }
